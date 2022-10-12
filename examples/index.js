@@ -1,3 +1,4 @@
+// 値の評価と表示
 const total = 42 + 42;
 console.log(total); // -> 1
 console.log("Hi!")
