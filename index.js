@@ -30,3 +30,4 @@ const object = {
 console.log(object['123']); // => "value"
 // NG: ドット記法では、数値からはじまる識別子は利用できない
 // object.123
+console.log("正規表現");
