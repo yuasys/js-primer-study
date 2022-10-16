@@ -8,6 +8,22 @@
     
     <p>正規表現リテラル</p>
     
-    <script src="./index.js"></script>
+    
+    <script>
+    console.log("-----正規表現リテラルを理解する-----");
+    const numberRegExp = /\d+/; // 1文字以上の数字にマッチする正規表現
+    // `numberRegExp`の正規表現が文字列"123"にマッチするかをテストする
+    console.log(numberRegExp.test("aaa")); // => true
+    console.log(numberRegExp.test("12abc")); // => true
+
+    // プリミティブ型とオブジェクト
+    console.log("------プリミティブ型とオブジェクト------")
+    // 文字列をラップしたStringラッパーオブジェクト
+    const str = new String("文字列");
+    // ラッパーオブジェクトは"object"型のデータ
+    console.log(typeof str); // => "object"
+    // Stringオブジェクトの`length`プロパティは文字列の長さを返す
+    console.log(str.length); // => 3
+    </script>
   </body>
 </html>
