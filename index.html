@@ -10,6 +10,10 @@
     
     
     <script>
-    console.log("-----演算子 + -----");
-    console.log('1 + 2 =' , 1 + 2);
+    console.log("[ES2015] 分割代入（Destructuring assignment）");
+    const array = [1, 2];
+    // aには`array`の0番目の値、bには1番目の値が代入される
+    const [a, b] = array;
+    console.log(a); // => 1
+    console.log(b); // => 2
     </script>
