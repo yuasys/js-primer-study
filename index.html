@@ -11,9 +11,34 @@
     
     <script>
     console.log("[ES2015] 分割代入（Destructuring assignment）");
+    console.log("-----配列への分割代入");
     const array = [1, 2];
     // aには`array`の0番目の値、bには1番目の値が代入される
     const [a, b] = array;
     console.log(a); // => 1
     console.log(b); // => 2
+    console.log("-----オブジェクトへの分割代入");
+    const obj = {
+    "key": "value"
+    };
+    // プロパティ名`key`の値を、変数`key`として定義する
+    const { key } = obj;//const key = obj.key;と書いたのと同じ
+    console.log(key); // => "value"
+
+    console.log("[ES2020] Nullish coalescing演算子(??)")
+    console.log("-----実例")
+    // 左辺がnullishであるため、右辺の値の評価結果を返す
+    console.log(null ?? "右辺の値"); // => "右辺の値"
+    console.log(undefined ?? "右辺の値"); // => "右辺の値"
+    // 左辺がnullishではないため、左辺の値の評価結果を返す
+    console.log(true ?? "右辺の値"); // => true
+    console.log(false ?? "右辺の値"); // => false
+    console.log(0 ?? "右辺の値"); // => 0
+    console.log("文字列" ?? "右辺の値"); // => "文字列"
+    console.log("----------");
+    console.log("[三項演算子]")
+    const valueA = true ? "A" : "B";
+    console.log(valueA); // => "A"
+    const valueB = false ? "A" : "B";
+    console.log(valueB); // => "B"
     </script>
