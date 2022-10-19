@@ -6,44 +6,33 @@
   <body>
     <p>JavaScript Primer Examples 第一部 基本文法</p>
 
-    <p>関数と宣言 function</p>
+    <p>関数と宣言 05-function-2 引数のバリエーション</p>
     <ul>
-      <li>関数宣言 functionキーワード</li>
-      <li>関数の引数</li>
-      <li>[ES2015]デフォルト引数</li>
+      <li>呼び出し時の引数が多いとき</li>
+      <li>可変長引数 Math.max関数</li>
+      <li>[ES2015] Rest parameters  残余引数</li>
+      <li></li>
+      <li></li>
     <script>
-    function double(num) {
-    return num * 2;
-    }
-    // `double`関数の返り値は、`num`に`10`を入れて`return`文で返した値
-    console.log(double(10)); // => 20
+      　console.log('------------ 呼び出し時の引数が多いとき ------------'); 
+      function add(x, y) {
+        return console.log(x + y);
+      }
+      add(1, 3); // => 4
+      add(1, 3, 5); // => 4 あふれた引数は単純に無視される
 
-    // ----------------------関数宣言------------------------
-    function fn() {
-    // 何も返り値を指定してない場合は`undefined`を返す
-    return;
-    // すでにreturnされているため、この行は実行されません
-    }
-    console.log(fn()); // => undefined
-    // ----------------------関数の引数-----------------------
-    // 呼び出し時の因数が少ない時（１個の引数）
-    function echo(x) {
-    return x;
-    }
-    console.log(echo(1)); // => 1
-    console.log(echo()); // => undefined
-    // 呼び出し時の因数が少ない時（複数の引数）
-    function argumentsToArray(x, y) {
-    return [x, y];
-    }
-    console.log(argumentsToArray(1, 2)); // => [1, 2]
-    // 仮引数のxには1、yにはundefinedが入る
-    console.log(argumentsToArray(1)); // => [1, undefined]
-    // -----------------[ES2015]デフォルト引数-----------------
-    function echo(x = "デフォルト値") {
-    return x;
-    }
-    console.log(echo(1)); // => 1
-    console.log(echo()); // => "デフォルト値"    </script>
+      console.log('------------ 可変長引数 ------------');
+      // Math.maxは可変長引数を受け取る関数
+      const max = Math.max(1, 5, 10, 20);
+      console.log(max); // => 20
+
+      console.log('----- [ES2015] Rest parameters 残余引数 ------');
+      function fn(...args) {
+      // argsは引数の値が順番に入った配列
+      console.log(args); // => ["a", "b", "c"]
+      }
+      fn("a", "b", "c");
+
+    </script>
   </body>
 </html>
