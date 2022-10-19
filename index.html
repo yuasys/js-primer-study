@@ -10,6 +10,7 @@
     <ul>
       <li>関数宣言 functionキーワード</li>
       <li>関数の引数</li>
+      <li>[ES2015]デフォルト引数</li>
     <script>
     function double(num) {
     return num * 2;
@@ -38,6 +39,11 @@
     console.log(argumentsToArray(1, 2)); // => [1, 2]
     // 仮引数のxには1、yにはundefinedが入る
     console.log(argumentsToArray(1)); // => [1, undefined]
-    </script>
+    // -----------------[ES2015]デフォルト引数-----------------
+    function echo(x = "デフォルト値") {
+    return x;
+    }
+    console.log(echo(1)); // => 1
+    console.log(echo()); // => "デフォルト値"    </script>
   </body>
 </html>
