@@ -7,14 +7,32 @@
     <p>JavaScript Primer Examples 第一部 基本文法</p>
 
     <p>関数と宣言 function</p>
-    <!-- <ul>
-      <li><配列への分割代入/li>
-      <li>オブジェクトへの分割代入</li>
-      <li>[ES2020] Nullish coalescing演算子(??)</li>
-      <li>[三項演算子]</li>
-    </ul>
-     -->
+    <ul>
+      <li>関数宣言 functionキーワード</li>
+    <script>
+    function double(num) {
+    return num * 2;
+    }
+    // `double`関数の返り値は、`num`に`10`を入れて`return`文で返した値
+    console.log(double(10)); // => 20
 
-    <script></script>
+    // ----------------------関数宣言-------------------------------
+    function fn() {
+    // 何も返り値を指定してない場合は`undefined`を返す
+    return;
+    // すでにreturnされているため、この行は実行されません
+    }
+    console.log(fn()); // => undefined
+    // ----------------------関数の引数-------------------------------
+    function echo(x) {
+    return x;
+    }
+
+    console.log(echo(1)); // => 1
+    console.log(echo()); // => undefined
+
+
+
+    </script>
   </body>
 </html>
