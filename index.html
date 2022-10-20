@@ -11,8 +11,9 @@
       <li>呼び出し時の引数が多いとき</li>
       <li>可変長引数 Math.max関数</li>
       <li>[ES2015] Rest parameters  残余引数</li>
-      <li></li>
-      <li></li>
+      <li>arguments argument関数の中でのみ参照できる変数</li>
+      <li>[ES2015] 関数の引数と分割代入</li>
+      <li>関数はオブジェクト</li>
     <script>
       　console.log('------------ 呼び出し時の引数が多いとき ------------'); 
       function add(x, y) {
@@ -32,7 +33,48 @@
       console.log(args); // => ["a", "b", "c"]
       }
       fn("a", "b", "c");
+      function fn(arg1, ...restArgs) {
+      console.log(arg1); // => "a"
+      console.log(restArgs); // => ["b", "c"]
+      }
+      fn("a", "b", "c");
+      console.log('----- arguments ------');
+      function fn２() {
+      // `arguments`はインデックスを指定して各要素にアクセスできる
+      console.log(arguments[0]); // => "a"
+      console.log(arguments[1]); // => "b"
+      console.log(arguments[2]); // => "c"
+      }
+      fn２("a", "b", "c");  
 
+      console.log('[ES2015] 関数の引数と分割代入');
+      function printUserId(user) {
+      console.log(user.id); // => 42
+      }
+      const user = {
+          id: 42
+      };
+      printUserId(user);
+
+      console.log('------ 関数はオブジェクト -----');
+      function fn3() {
+        console.log("fn3が呼び出されました");
+      }
+      // 関数`fn3`を`myFunc`変数に代入している
+      const myFunc = fn3;
+      myFunc();
+
+      console.log('関数式')
+      // factorialは関数の外から呼び出せる名前
+      // innerFactは関数の外から呼び出せない名前
+      const factorial = function innerFact(n) {
+       if (n === 0) {
+            return 1;
+        }
+       // innerFactを再帰的に呼び出している
+       return n * innerFact(n - 1);
+      };
+      console.log(factorial(3)); // => 6
     </script>
   </body>
 </html>
