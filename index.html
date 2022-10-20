@@ -11,7 +11,7 @@
       <li>呼び出し時の引数が多いとき</li>
       <li>可変長引数 Math.max関数</li>
       <li>[ES2015] Rest parameters  残余引数</li>
-      <li></li>
+      <li>arguments argument関数の中でのみ参照できる変数</li>
       <li></li>
     <script>
       　console.log('------------ 呼び出し時の引数が多いとき ------------'); 
@@ -37,6 +37,14 @@
       console.log(restArgs); // => ["b", "c"]
       }
       fn("a", "b", "c");
+      console.log('----- arguments ------');
+      function fn２() {
+      // `arguments`はインデックスを指定して各要素にアクセスできる
+      console.log(arguments[0]); // => "a"
+      console.log(arguments[1]); // => "b"
+      console.log(arguments[2]); // => "c"
+      }
+      fn２("a", "b", "c");  
     </script>
   </body>
 </html>
