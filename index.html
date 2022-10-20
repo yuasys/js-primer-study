@@ -13,6 +13,7 @@
       <li>[ES2015] Rest parameters  残余引数</li>
       <li>arguments argument関数の中でのみ参照できる変数</li>
       <li>[ES2015] 関数の引数と分割代入</li>
+      <li>関数はオブジェクト</li>
     <script>
       　console.log('------------ 呼び出し時の引数が多いとき ------------'); 
       function add(x, y) {
@@ -53,7 +54,15 @@
       const user = {
           id: 42
       };
-printUserId(user);
+      printUserId(user);
+
+      console.log('------ 関数はオブジェクト -----');
+      function fn3() {
+        console.log("fn3が呼び出されました");
+      }
+      // 関数`fn3`を`myFunc`変数に代入している
+      const myFunc = fn3;
+      myFunc();
     </script>
   </body>
 </html>
